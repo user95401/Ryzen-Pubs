@@ -24,7 +24,7 @@ jobs:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
       - name: "React to comment"
-        uses: GrantBirki/comment@vX.X.X
+        uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.issue_comment.comment.id }}
           reactions: eyes
@@ -39,7 +39,7 @@ jobs:
           tag_name: ${{ github.event.issue.id }}
           prerelease: true
       - name: "React to comment"
-        uses: GrantBirki/comment@vX.X.X
+        uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.issue_comment.comment.id }}
           reactions: eyes
