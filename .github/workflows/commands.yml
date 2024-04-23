@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: "Check user permission" 
         uses: actions-cool/check-user-permission@v2
-  Verify:
+  verify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
     if: github.event.issue_comment.comment.body == '!verify'
@@ -23,7 +23,7 @@ jobs:
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
-  Unverify:
+  unverify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
     if: github.event.issue_comment.comment.body == '!unverify'
