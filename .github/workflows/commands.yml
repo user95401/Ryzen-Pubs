@@ -16,17 +16,24 @@ jobs:
   verify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue_comment.comment.body }} == '!verify'
+    if: ${{ github.event.comment.body }} == '!verify'
     steps:
       - name: "Verify mod"
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
+      - name: "React to comment"
+        uses: GrantBirki/comment@v2.0.10
+        with:
+          comment-id: ${{ github.event.comment.id }}
+          issue-number: ${{ github.event.issue.number }}
+          reactions: eyes
+
   unverify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue_comment.comment.body }} == '!unverify'
+    if: ${{ github.event.comment.body }} == '!unverify'
     steps:
       - name: "Unverify mod"
         uses: softprops/action-gh-release@v2
