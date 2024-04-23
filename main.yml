@@ -1,0 +1,15 @@
+name: Release Issued Mod
+on:
+  issue:
+    branches: [ "main" ]
+jobs:
+  Main:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.event.issue.title }}
