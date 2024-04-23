@@ -8,20 +8,28 @@ permissions:
   contents: write 
   issues: write 
 jobs:
-  CheckUserRermission:
+  CheckUserPermission:
     runs-on: ubuntu-latest
     steps:
       - name: "Check user permission" 
         uses: actions-cool/check-user-permission@v2
   Verify:
-    needs: CheckUserRermission
+    needs: CheckUserPermission
     runs-on: ubuntu-latest
+    if: github.event.issue_comment.comment.body == '!verify'
     steps:
-      - name: "Is Verify command" 
-        if: github.event.issue_comment.comment.body == '!verify'
-        run: "echo ${{ github.event.issue_comment.comment.body }}"
       - name: "Verify mod"
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
+  Unverify:
+    needs: CheckUserPermission
+    runs-on: ubuntu-latest
+    if: github.event.issue_comment.comment.body == '!unverify'
+    steps:
+      - name: "Unverify mod"
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.issue.id }}
+          prerelease: true
