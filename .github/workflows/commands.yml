@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Is Verify command" 
-        if: github.event.issue_comment.comment.body == !verify
-        run: echo github.event.issue_comment.comment.body
+        if: github.event.issue_comment.comment.body == '!verify'
+        run: "echo ${{ github.event.issue_comment.comment.body }}"
       - name: "Verify mod"
         uses: softprops/action-gh-release@v2
         with:
