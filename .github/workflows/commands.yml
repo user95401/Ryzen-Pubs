@@ -24,10 +24,10 @@ jobs:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
       - name: "React to comment"
-        uses: dkershner6/reaction-action@v2
+        uses: GrantBirki/comment@vX.X.X
         with:
-          commentId: ${{ github.event.issue_comment.comment.id }}
-          reaction: "eyes" # Optional, defaults to +1
+          comment-id: ${{ github.event.issue_comment.comment.id }}
+          reactions: eyes
   unverify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
           tag_name: ${{ github.event.issue.id }}
           prerelease: true
       - name: "React to comment"
-        uses: dkershner6/reaction-action@v2
+        uses: GrantBirki/comment@vX.X.X
         with:
-          commentId: ${{ github.event.issue_comment.comment.id }}
-          reaction: "eyes" # Optional, defaults to +1
+          comment-id: ${{ github.event.issue_comment.comment.id }}
+          reactions: eyes
