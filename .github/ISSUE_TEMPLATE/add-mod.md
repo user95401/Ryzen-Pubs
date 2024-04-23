@@ -10,7 +10,7 @@ assignees: ''
 [mod]
 
 ; name of target file in release
-file = mod.geode
+file = noname.mod.geode
 
 ; repository
 repo = user/mod
