@@ -1,0 +1,23 @@
+name: Exec Command
+on:
+  issue_comment:
+    types:
+      - created
+      - edited
+permissions:
+  contents: write 
+  issues: write 
+jobs:
+  Main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check user permission" 
+        uses: actions-cool/check-user-permission@v2
+      - name: "Verify mod"
+        if: ${{ github.event.issue_comment.body }} == "!verify" 
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.issue_comment.issue.id }}
+          name: ${{ github.event.issue_comment.issue.title }}
+          body: ${{ github.event.issue_comment.issue.body }}
+          prerelease: false
