@@ -23,11 +23,6 @@ jobs:
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
-      - name: "React to comment"
-        uses: GrantBirki/comment@v2.0.10
-        with:
-          comment-id: ${{ github.event.issue_comment.comment.id }}
-          reactions: eyes
   unverify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
@@ -42,4 +37,5 @@ jobs:
         uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.issue_comment.comment.id }}
+          issue-number: ${{ github.event.issue.number }}
           reactions: eyes
