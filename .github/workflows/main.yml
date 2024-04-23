@@ -4,11 +4,12 @@ on:
     types:
       - reopened
       - opened
+permissions:
+  contents: write 
+  issues: write 
 jobs:
   Main:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
       - name: Create Release
         uses: actions/create-release@v1
