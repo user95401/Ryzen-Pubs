@@ -1,4 +1,4 @@
-name: Release Issued Mod
+name: Remove Mod
 on:
   issues:
     types:
