@@ -23,11 +23,12 @@ jobs:
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: false
-      - name: "React to comment"
+      - name: "Update comment"
         uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.comment.id }}
           issue-number: ${{ github.event.issue.number }}
+          body: "- DONE!"
           reactions: eyes
 
   unverify:
@@ -40,9 +41,11 @@ jobs:
         with:
           tag_name: ${{ github.event.issue.id }}
           prerelease: true
-      - name: "React to comment"
+      - name: "Update comment"
         uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.comment.id }}
           issue-number: ${{ github.event.issue.number }}
+          body: "- DONE!"
           reactions: eyes
+            
