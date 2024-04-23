@@ -36,6 +36,6 @@ jobs:
       - name: "React to comment"
         uses: GrantBirki/comment@v2.0.10
         with:
-          comment-id: ${{ github.event.issue_comment.comment.id }}
+          comment-id: ${{ github.event.comment.id }}
           issue-number: ${{ github.event.issue.number }}
           reactions: eyes
