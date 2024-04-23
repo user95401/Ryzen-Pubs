@@ -16,7 +16,7 @@ jobs:
   verify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
-    if: github.event.issue_comment.comment.body == '!verify'
+    if: ${{ github.event.issue_comment.comment.body }} == '!verify'
     steps:
       - name: "Verify mod"
         uses: softprops/action-gh-release@v2
@@ -26,7 +26,7 @@ jobs:
   unverify:
     needs: CheckUserPermission
     runs-on: ubuntu-latest
-    if: github.event.issue_comment.comment.body == '!unverify'
+    if: ${{ github.event.issue_comment.comment.body }} == '!unverify'
     steps:
       - name: "Unverify mod"
         uses: softprops/action-gh-release@v2
