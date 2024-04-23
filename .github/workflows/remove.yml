@@ -1,0 +1,17 @@
+name: Release Issued Mod
+on:
+  issues:
+    types:
+      - closed
+      - deleted
+permissions:
+  contents: write 
+  issues: write 
+jobs:
+  Main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Remove Release"
+        uses: larryjoelane/delete-release-action@v1.0.24
+        with:
+          release-name: ${{ github.event.issue.id }}
