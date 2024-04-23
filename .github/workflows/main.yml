@@ -15,4 +15,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.issue.id }}
-          release_name: ${{ github.event.issue.title }}
+          name: ${{ github.event.issue.title }}
