@@ -17,3 +17,4 @@ jobs:
           tag_name: ${{ github.event.issue.id }}
           name: ${{ github.event.issue.title }}
           body: ${{ github.event.issue.body }}
+          prerelease: false
