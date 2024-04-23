@@ -26,7 +26,7 @@ release_tag = latest
 Close opened issue to remove mod from list, reopen to add mod again.
 
 # Verifying?
-Unverifyed mods has "pre-release" option enabled. Its by default...
+Unverifyed mods has "pre-release" option enabled. Its by default...<br>
 Trusted people can verify mods, commands are (as issue comment):
 - !verify
 - !unverify
