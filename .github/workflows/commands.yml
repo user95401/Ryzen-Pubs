@@ -17,7 +17,7 @@ jobs:
         if: ${{ github.event.issue_comment.body }} == "!verify" 
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.issue_comment.issue.id }}
-          name: ${{ github.event.issue_comment.issue.title }}
-          body: ${{ github.event.issue_comment.issue.body }}
+          tag_name: ${{ github.event.issue.id }}
+          name: ${{ github.event.issue.title }}
+          body: ${{ github.event.issue.body }}
           prerelease: false
