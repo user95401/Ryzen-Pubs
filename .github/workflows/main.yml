@@ -11,8 +11,8 @@ jobs:
   Main:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Release
-        uses: actions/create-release@v1
+      - name: "Release"
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.issue.id }}
           release_name: ${{ github.event.issue.title }}
