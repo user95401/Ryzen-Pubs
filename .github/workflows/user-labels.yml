@@ -9,9 +9,10 @@ permissions:
   issues: write 
 jobs:
   Main:
-  if: github.event.comment.user = github.event.issue.user
-  steps:
-  - name: Toggle label
-    uses: jd-0001/gh-action-toggle-awaiting-reply-label@1.0.1
-    with:
-      label: "${{github.event.comment.body}}"
+   runs-on: ubuntu-latest 
+   if: github.event.comment.user == github.event.issue.user
+   steps:
+    - name: Toggle label
+      uses: jd-0001/gh-action-toggle-awaiting-reply-label@1.0.1
+      with:
+       label: "${{github.event.comment.body}}"
