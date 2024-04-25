@@ -10,7 +10,7 @@ permissions:
 jobs:
   Main:
    runs-on: ubuntu-latest 
-   if: github.event.comment.user == github.event.issue.user
+   if: github.event.comment.user.id == github.event.issue.user.id
    steps:
     - name: Toggle label
       uses: jd-0001/gh-action-toggle-awaiting-reply-label@1.0.1
