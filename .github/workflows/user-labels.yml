@@ -7,6 +7,8 @@ on:
 permissions:
   contents: write 
   issues: write 
+env: 
+ labels: join('${{ github.event.comment.body }}', ' ')[1]
 jobs:
   Main:
    runs-on: ubuntu-latest 
@@ -18,4 +20,4 @@ jobs:
        actions: 'toggle-labels'
        token: ${{ secrets.GITHUB_TOKEN }}
        issue-number: ${{ github.event.issue.number }}
-       labels: format('{0}', join('${{ github.event.comment.body }}', ' ')[1])
+       labels: ${{ env.labels }}
