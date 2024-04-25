@@ -14,7 +14,16 @@ jobs:
    runs-on: ubuntu-latest 
    if: github.event.comment.user.id == github.event.issue.user.id && startsWith(github.event.comment.body, '!setlabels ') && false == contains(github.event.comment.body, 'verified') 
    steps:
-    - run: echo ${{ env.labels }}
+    - run: >
+        import os
+        print("in: " + os.environ["labels"])
+        
+        import re
+        s = os.environ["labels"]
+        s = re.sub('!setlabels ', '', s)
+        
+        os.environ["labels"] = s
+        print("out: " + os.environ["labels"])
     - name: Toggle label
       uses: actions-cool/issues-helper@v3
       with:
