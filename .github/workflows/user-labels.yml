@@ -5,8 +5,7 @@ on:
       - created
       - edited
 permissions:
-  contents: write 
-  issues: write 
+  issues: write
 env: 
  labels: ${{ github.event.comment.body }}
 jobs:
