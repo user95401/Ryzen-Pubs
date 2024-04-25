@@ -10,7 +10,9 @@ permissions:
 jobs:
   Main:
    runs-on: ubuntu-latest 
-   if: github.event.comment.user.id == github.event.issue.user.id
+   if: github.event.comment.user.id == github.event.issue.user.id 
+       && startsWith(github.event.comment.body, "!setlabels ")
+       && !contains(github.event.comment.body, "verified") 
    steps:
     - name: Toggle label
       uses: actions-cool/issues-helper@v3
@@ -18,4 +20,4 @@ jobs:
        actions: 'toggle-labels'
        token: ${{ secrets.GITHUB_TOKEN }}
        issue-number: ${{ github.event.issue.number }}
-       labels: "${{github.event.comment.body}}"
+       labels: join(github.event.comment.body, " ")[1]
