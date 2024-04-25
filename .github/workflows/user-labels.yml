@@ -13,6 +13,6 @@ jobs:
    if: github.event.comment.user.id == github.event.issue.user.id
    steps:
     - name: Toggle label
-      uses: jd-0001/gh-action-toggle-awaiting-reply-label@1.0.1
+      uses: jd-0001/gh-action-toggle-awaiting-reply-label@v1.0.1
       with:
        label: "${{github.event.comment.body}}"
