@@ -1,9 +1,9 @@
 # Ryzen-Mods
 Ryzen Mods Catalog Container...
-Mods will stored at releases.
+Mods will stored at issues.
 
 # Add mod
-Every created issue (open or reopen) will event workflow that creating or updating release with issue data.
+Just create issue with special template. 
 
 In issue body should be mod info in ini style.
 
@@ -23,20 +23,4 @@ release_tag = latest
 ```
 
 # Hide away or bring back the mod
-Close opened issue to remove mod from list, reopen to add mod again.
-
-# Verifying?
-Unverifyed mods has "pre-release" option enabled. Its by default...<br>
-Trusted people can verify mods, commands are (as issue comment):
-```cpp
-!verify
-```
-```cpp
-!unverify
-```
-
-## totally not ur deal
-API :D
-```
-https://ungh.cc/repos/user95401/Ryzen-Mods/releases
-```
+Close opened issue to remove mod from listing, reopen to add mod again.
