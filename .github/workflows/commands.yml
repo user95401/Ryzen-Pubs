@@ -19,16 +19,15 @@ jobs:
     if: github.event.comment.body == '!verify'
     steps:
       - name: "Verify mod"
-        uses: softprops/action-gh-release@v2
+        uses: andymckay/labeler@master
         with:
-          tag_name: ${{ github.event.issue.id }}
-          prerelease: false
+          add-labels: "verified"
       - name: "Update comment"
         uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.comment.id }}
           issue-number: ${{ github.event.issue.number }}
-          body: "- DONE!"
+          body: "- PROCESSED"
           reactions: eyes
 
   unverify:
@@ -37,15 +36,14 @@ jobs:
     if: github.event.comment.body == '!unverify'
     steps:
       - name: "Unverify mod"
-        uses: softprops/action-gh-release@v2
+        uses: andymckay/labeler@master
         with:
-          tag_name: ${{ github.event.issue.id }}
-          prerelease: true
+          remove-labels: "verifyed"
       - name: "Update comment"
         uses: GrantBirki/comment@v2.0.10
         with:
           comment-id: ${{ github.event.comment.id }}
           issue-number: ${{ github.event.issue.number }}
-          body: "- DONE!"
+          body: "- PROCESSED"
           reactions: eyes
             
