@@ -22,14 +22,18 @@ jobs:
       with:
         script: |
           import os
-          print("in: " + os.environ["labels"])
+          print("env labels: " + os.environ["labels"])
           
           import re
           s = os.environ["labels"]
           s = re.sub('!setlabels ', '', s)
           
           os.environ["labels"] = s
-          print("out: " + os.environ["labels"])
+          print("s: " + os.environ["labels"])
+
+          env_file = os.getenv('GITHUB_ENV')
+          with open(env_file, "a") as myfile:
+              myfile.write("labels=" + s)
     - name: Toggle label
       uses: actions-cool/issues-helper@v3
       with:
