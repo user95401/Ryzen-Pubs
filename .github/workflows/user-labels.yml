@@ -8,22 +8,28 @@ permissions:
   contents: write 
   issues: write 
 env: 
- labels: ${{ join(github.event.comment.body, ' ') }}
+ labels: ${{ github.event.comment.body }}
 jobs:
   Main:
    runs-on: ubuntu-latest 
    if: github.event.comment.user.id == github.event.issue.user.id && startsWith(github.event.comment.body, '!setlabels ') && false == contains(github.event.comment.body, 'verified') 
    steps:
-    - run: >
-        import os
-        print("in: " + os.environ["labels"])
-        
-        import re
-        s = os.environ["labels"]
-        s = re.sub('!setlabels ', '', s)
-        
-        os.environ["labels"] = s
-        print("out: " + os.environ["labels"])
+    - name: bruh
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - uses: jannekem/run-python-script-action@v1
+      with:
+        script: |
+          import os
+          print("in: " + os.environ["labels"])
+          
+          import re
+          s = os.environ["labels"]
+          s = re.sub('!setlabels ', '', s)
+          
+          os.environ["labels"] = s
+          print("out: " + os.environ["labels"])
     - name: Toggle label
       uses: actions-cool/issues-helper@v3
       with:
