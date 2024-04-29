@@ -1,0 +1,45 @@
+name: Update issue
+on:
+  issues:
+    types:
+      - opened
+      - reopened
+      - edited
+permissions:
+  issues: write
+env: 
+ body: ${{ github.event.issue.body }}
+jobs:
+  Main:
+   runs-on: ubuntu-latest 
+   if: github.event.comment.user.id == github.event.issue.user.id && startsWith(github.event.comment.body, '!setlabels ') && false == contains(github.event.comment.body, 'verified') 
+   steps:
+    - name: bruh
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - uses: jannekem/run-python-script-action@v1
+    - name: run PY script
+      with:
+        script: |
+          
+          import os
+          
+          print("env body: " + os.environ["body"])
+          
+          new_body = os.environ["body"]
+          new_body = new_body.replace(" ### [mod]", "[mod]")
+          new_body = new_body.replace("### [mod]", "[mod]")
+          
+          os.environ["body"] = new_body
+          print("new_body: " + os.environ["body"])
+          
+          env_file = os.getenv('GITHUB_ENV')
+          with open(env_file, "a") as myfile:
+            myfile.write("body=" + new_body)
+            
+    - name: Fix body
+      run: gh issue edit "${{ github.event.issue.number }}" --body "${{ env.body }}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_REPO: ${{ github.repository }}
