@@ -23,10 +23,12 @@ jobs:
         script: |
           import os
           import base64
+          def b64e(s):
+              return base64.b64encode(s.encode()).decode()
           print("env body: " + os.environ["body"])
           new_body = os.environ["body"]
           new_body = new_body.replace("### [mod]", "[mod]")
-          set_env("body", base64.b64encode(bytes(new_body, 'utf-8')))
+          set_env("body", b64e(new_body))
     - uses: akiojin/decode-base64-github-action@v0.1.0
       id: decode-base64
       with:
