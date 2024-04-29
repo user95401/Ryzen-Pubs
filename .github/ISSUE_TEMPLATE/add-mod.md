@@ -4,19 +4,62 @@ about: base template with ini mod info
 title: Unnamed mod entry
 labels: 'mod'
 assignees: ''
+body:
 
+- type: markdown
+  attributes:
+    value: |
+      [mod]
+      file = 
+  
+- type: input
+  id: file
+  attributes:
+    label: file
+    description: "Name of target file in release"
+    placeholder: "noname.mod.geode"
+  validations:
+    required: true
+
+- type: markdown
+  attributes:
+    value: |
+      repo =
+  
+- type: input
+  id: repo
+  attributes:
+    label: repo
+    description: "Repository"
+    placeholder: "user/mod"
+  validations:
+    required: true
+
+- type: markdown
+  attributes:
+    value: |
+      repo =
+  
+- type: input
+  id: release_tag
+  attributes:
+    label: release_tag
+    description: "You can set exact version if it really needs"
+    placeholder: "latest"
+  validations:
+    required: true
+
+- type: markdown
+  attributes:
+    value: |
+      repo =
+  
+- type: input
+  id: desc
+  attributes:
+    label: desc
+    description: "Small description about ur mod (in game its in TextArea so u can yse color tags)"
+    placeholder: "latest"
+  validations:
+    required: true
 ---
-
-[mod]
-
-; name of target file in release
-file = noname.mod.geode
-
-; repository
-repo = user/mod
-
-; u can set exact version if it really needs
-release_tag = latest
-
-; small description about ur mod
-desc = No description provided...
