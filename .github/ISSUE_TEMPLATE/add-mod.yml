@@ -6,13 +6,11 @@ labels: 'mod'
 assignees: ''
 
 body:
-  
   - type: markdown
     attributes:
       value: |
         [mod]
         file = 
-    
   - type: input
     id: file
     attributes:
@@ -21,12 +19,10 @@ body:
       placeholder: "noname.mod.geode"
     validations:
       required: true
-  
   - type: markdown
     attributes:
       value: |
         repo =
-    
   - type: input
     id: repo
     attributes:
@@ -35,12 +31,10 @@ body:
       placeholder: "user/mod"
     validations:
       required: true
-  
   - type: markdown
     attributes:
       value: |
         repo =
-    
   - type: input
     id: release_tag
     attributes:
@@ -49,12 +43,10 @@ body:
       placeholder: "latest"
     validations:
       required: true
-  
   - type: markdown
     attributes:
       value: |
         repo =
-    
   - type: input
     id: desc
     attributes:
@@ -63,5 +55,4 @@ body:
       placeholder: "latest"
     validations:
       required: true
-
 ---
