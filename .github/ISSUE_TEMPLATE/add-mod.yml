@@ -5,6 +5,7 @@ title: Unnamed mod entry
 labels: 'mod'
 
 body:
+#file
   - type: markdown
     attributes:
       value: |
@@ -13,11 +14,12 @@ body:
   - type: input
     id: file
     attributes:
-      label: file
-      description: "Name of target file in release"
+      label: "Name of target file in release"
       placeholder: "noname.mod.geode"
+      value: "noname.mod.geode"
     validations:
       required: true
+#repo
   - type: markdown
     attributes:
       value: |
@@ -25,33 +27,30 @@ body:
   - type: input
     id: repo
     attributes:
-      label: repo
-      description: "Repository"
+      label: "Repository"
       placeholder: "user/mod"
+      value: "user/mod"
     validations:
       required: true
+#release_tag
   - type: markdown
     attributes:
       value: |
-        repo =
+        release_tag =
   - type: input
-    id: release_tag
     attributes:
-      label: release_tag
-      description: "You can set exact version if it really needs"
+      label: "You can set exact version if it really needs"
       placeholder: "latest"
+      value: "latest"
     validations:
       required: true
+#desc
   - type: markdown
     attributes:
       value: |
-        repo =
+        desc =
   - type: input
-    id: desc
     attributes:
-      label: desc
-      description: "Small description about ur mod (in game its in TextArea so u can yse color tags)"
-      placeholder: "latest"
-    validations:
-      required: true
+      label: "Small description about ur mod (in game its in TextArea so u can yse color tags)"
+      
 ---
