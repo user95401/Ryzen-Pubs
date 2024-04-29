@@ -28,13 +28,9 @@ jobs:
           
           new_body = os.environ["body"]
           new_body = new_body.replace('### [mod]', '[mod]')
+          print("new_body: " + new_body)
           
-          os.environ["body"] = new_body
-          print("new_body: " + os.environ["body"])
-          
-          env_file = os.getenv('GITHUB_ENV')
-          with open(env_file, "a") as myfile:
-            myfile.write("body=" + new_body)
+          echo "body=" + new_body >> $GITHUB_ENV
             
     - name: Remove in-process label
       run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
