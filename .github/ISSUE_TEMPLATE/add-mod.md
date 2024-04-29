@@ -2,7 +2,7 @@
 name: Add mod
 about: base template with ini mod info
 title: Unnamed mod entry
-labels: ''
+labels: 'mod'
 assignees: ''
 
 ---
@@ -17,3 +17,6 @@ repo = user/mod
 
 ; u can set exact version if it really needs
 release_tag = latest
+
+; small description about ur mod
+desc = No description provided...
