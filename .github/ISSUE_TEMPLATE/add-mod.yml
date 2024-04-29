@@ -5,52 +5,24 @@ title: Unnamed mod entry
 labels: 'mod'
 
 body:
-#file
-  - type: markdown
-    attributes:
-      value: |
-        [mod]
-        file = 
-  - type: input
-    id: file
-    attributes:
-      label: "Name of target file in release"
-      placeholder: "noname.mod.geode"
-      value: "noname.mod.geode"
-    validations:
-      required: true
-#repo
-  - type: markdown
-    attributes:
-      value: |
-        repo =
-  - type: input
-    id: repo
-    attributes:
-      label: "Repository"
-      placeholder: "user/mod"
-      value: "user/mod"
-    validations:
-      required: true
-#release_tag
-  - type: markdown
-    attributes:
-      value: |
-        release_tag =
-  - type: input
-    attributes:
-      label: "You can set exact version if it really needs"
-      placeholder: "latest"
-      value: "latest"
-    validations:
-      required: true
-#desc
-  - type: markdown
-    attributes:
-      value: |
-        desc =
-  - type: input
-    attributes:
-      label: "Small description about ur mod (in game its in TextArea so u can yse color tags)"
+- type: textarea
+  attributes:
+    label: ""
+    value: |
+      [mod]
       
+      ; name of target file in release
+      file = noname.mod.geode
+      
+      ; repository
+      repo = user/mod
+      
+      ; u can set exact version if it really needs
+      release_tag = latest
+      
+      ; small description about ur mod
+      desc = No description provided...
+    render: ini
+  validations:
+    required: true
 ---
