@@ -7,7 +7,7 @@ labels: 'mod'
 body:
 - type: textarea
   attributes:
-    label: ""
+    label: "[mod]"
     value: |
       [mod]
       
