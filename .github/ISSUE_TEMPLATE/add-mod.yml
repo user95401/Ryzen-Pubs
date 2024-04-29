@@ -49,7 +49,7 @@ body:
     attributes:
       value: |
         desc =
-  - type: input
+  - type: textarea
     attributes:
       label: "Small description about ur mod (in game its in TextArea so u can yse color tags)"
       
