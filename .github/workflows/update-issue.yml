@@ -27,8 +27,7 @@ jobs:
           print("env body: " + os.environ["body"])
           
           new_body = os.environ["body"]
-          new_body = new_body.replace(" ### [mod]", "[mod]")
-          new_body = new_body.replace("### [mod]", "[mod]")
+          new_body = new_body.replace('### [mod]', '[mod]')
           
           os.environ["body"] = new_body
           print("new_body: " + os.environ["body"])
