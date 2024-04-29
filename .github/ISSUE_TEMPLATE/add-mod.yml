@@ -3,7 +3,6 @@ name: Add mod
 about: base template with ini mod info
 title: Unnamed mod entry
 labels: 'mod'
-assignees: ''
 
 body:
   - type: markdown
