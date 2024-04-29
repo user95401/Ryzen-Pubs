@@ -2,7 +2,7 @@
 name: Add mod
 description: base template with ini mod info
 title: Unnamed mod entry
-labels: 'mod'
+labels: ['mod', 'in-process']
 
 body:
 - type: textarea
