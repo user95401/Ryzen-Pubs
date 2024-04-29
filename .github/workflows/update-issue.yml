@@ -22,19 +22,27 @@ jobs:
       with:
         script: |
           import os
+          import base64
           print("env body: " + os.environ["body"])
           new_body = os.environ["body"]
           new_body = new_body.replace("### [mod]", "[mod]")
-          set_env("body", new_body)
-    - name: Remove in-process label
-      if: contains(github.event.issue.labels.*.name, 'in-process')
-      run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
+          set_env("body", base64.b64encode(bytes(new_body, 'utf-8')))
+    - uses: akiojin/decode-base64-github-action@v0.1.0
+      id: decode-base64
+      with:
+        base64: ${{ env.body }}
+    - name: Fix body
+      run: |
+        x="http%3A%2F%2Fstackoverflow.com%2Fsearch%3Fq%3Durldecode%2Bbash"
+        y=$(urldecode "$x")
+        function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+        gh issue edit "${{ github.event.issue.number }}" --body "${{ steps.decode-base64.outputs.decoded }}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
-            
-    - name: Fix body
-      run: gh issue edit "${{ github.event.issue.number }}" --body "${{ env.body }}"
+    - name: Remove in-process label
+      if: contains(github.event.issue.labels.*.name, 'in-process')
+      run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
