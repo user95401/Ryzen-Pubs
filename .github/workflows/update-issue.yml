@@ -27,6 +27,7 @@ jobs:
           new_body = new_body.replace("### [mod]", "[mod]")
           set_env("body", new_body)
     - name: Remove in-process label
+      if: contains(github.event.issue.labels.*.name, 'in-process')
       run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
