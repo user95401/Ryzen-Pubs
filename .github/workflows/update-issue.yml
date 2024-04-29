@@ -19,7 +19,7 @@ jobs:
       with:
         python-version: '3.x'
     - uses: jannekem/run-python-script-action@v1
-    - name: run PY script
+      name: run PY script
       with:
         script: |
           
@@ -37,6 +37,12 @@ jobs:
           env_file = os.getenv('GITHUB_ENV')
           with open(env_file, "a") as myfile:
             myfile.write("body=" + new_body)
+            
+    - name: Remove in-process label
+      run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_REPO: ${{ github.repository }}
             
     - name: Fix body
       run: gh issue edit "${{ github.event.issue.number }}" --body "${{ env.body }}"
