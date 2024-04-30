@@ -13,6 +13,7 @@ Values:
 - `file`: used to make download link like `github.com/user/repo/releases/download/{mod.release_tag}/{mod.file}` <br>Examples: me.mod.geode, me.mod.dll, mod.dll
 - `repo`: ur repository path for getting info and some projec files <br>Examples: user95401/Ryzen, omgmodding/better-gd, ur-username/mod-name
 - `release_tag`: its better to set 'latest' but u can set exact tag of release with mod
+- `desc`: small description about ur mod, supports color tags
 
 Full ini example:
 ```ini
