@@ -13,13 +13,19 @@ jobs:
   Main:
    runs-on: ubuntu-latest 
    steps:
-    - name: Add assigness
+    - name: Add invalid label
+      if: contains(github.event.issue.labels.*.name, 'in-process')
+      run: gh issue edit "${{ github.event.issue.number }}" --add-label invalid
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_REPO: ${{ github.repository }}
+    - name: Send comment
       uses: actions-cool/issues-helper@v3
       with:
          actions: "create-comment" 
          issue-number: ${{ github.event.issue.number }}
          body: |
-          The validation goes here: <br>
+          The validation goes here:
           ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     - name: bruh
       uses: actions/setup-python@v4
@@ -56,7 +62,7 @@ jobs:
         GH_REPO: ${{ github.repository }}
     - name: Remove invalid label
       if: contains(github.event.issue.labels.*.name, 'in-process')
-      run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
+      run: gh issue edit "${{ github.event.issue.number }}" --remove-label invalid
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
