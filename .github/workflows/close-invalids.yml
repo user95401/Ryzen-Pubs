@@ -1,0 +1,16 @@
+name: Close invalids
+
+on:
+ schedule:
+ - cron: "*/5 * * * *"
+
+jobs:
+  Main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: close-issues
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'close-issues'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          labels: 'invalid'
