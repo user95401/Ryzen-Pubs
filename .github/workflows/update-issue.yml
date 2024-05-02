@@ -26,6 +26,7 @@ jobs:
          body: |
           The validation goes here:
           ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          > Issue is invalid if `invalid` label is not got removed for minute. 
     - name: bruh
       uses: actions/setup-python@v4
       with:
@@ -51,14 +52,14 @@ jobs:
       id: decode-base64
       with:
         base64: ${{ env.body }}
-    - uses: actions/checkout@v4
-      with:
-        repository: ${{ env.ini_repo}}
     - name: Fix body
       run: gh issue edit "${{ github.event.issue.number }}" --body "${{ steps.decode-base64.outputs.decoded }}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{ env.ini_repo}}
     - name: Remove invalid label
       if: contains(github.event.issue.labels.*.name, 'invalid')
       run: gh issue edit "${{ github.event.issue.number }}" --remove-label invalid
