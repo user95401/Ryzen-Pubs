@@ -13,6 +13,10 @@ jobs:
   Main:
    runs-on: ubuntu-latest 
    steps:
+    - name: Close issue
+      uses: actions-cool/issues-helper@v3
+      with:
+          actions: 'close-issue'
     - name: Add invalid label
       uses: actions-cool/issues-helper@v3
       with:
@@ -65,3 +69,7 @@ jobs:
       with:
           actions: 'remove-labels'
           labels: 'invalid'
+    - name: Open issue
+      uses: actions-cool/issues-helper@v3
+      with:
+          actions: 'open-issue'
