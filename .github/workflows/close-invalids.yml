@@ -1,8 +1,6 @@
 name: Close invalids
 
-on:
- schedule:
- - cron: "*/5 * * * *"
+on: ["issues", "issue_comment"]
 
 jobs:
   Main:
