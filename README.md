@@ -21,7 +21,12 @@ Full ini example:
 file = noname.mod.geode
 repo = user/mod
 release_tag = latest
+desc = <cg>helluva cool mod</c>
 ```
 
 # Hide away or bring back the mod
 Close opened issue to remove mod from listing, reopen to add mod again.
+
+# Commands
+Every issue comment is processed by workflow for commads.
+- `!setlabels label,other-label` to toggle label. Only issue creator can use that, `verify` label will be ignored
