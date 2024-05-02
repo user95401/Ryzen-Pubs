@@ -1,7 +1,10 @@
 name: Close invalids
 
-on: ["issues", "issue_comment"]
+on: "issues"
 
+permissions:
+  issues: write
+  
 jobs:
   Main:
     runs-on: ubuntu-latest
