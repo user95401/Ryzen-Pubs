@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+    - run: pip install git+https://github.com/HugeBrain16/iniparser2.git
     - uses: jannekem/run-python-script-action@v1
       name: run PY script
       with:
@@ -29,6 +30,10 @@ jobs:
           new_body = os.environ["body"]
           new_body = new_body.replace("### [mod]", "[mod]")
           set_env("body", b64e(new_body))
+          import iniparser2
+          parser = iniparser2.INI()
+          parser.read(new_body)
+          set_env("ini_repo", parser["mod"]["repo"])
     - uses: akiojin/decode-base64-github-action@v0.1.0
       id: decode-base64
       with:
@@ -38,7 +43,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
-    - name: Remove in-process label
+    - name: Remove invalid label
       if: contains(github.event.issue.labels.*.name, 'in-process')
       run: gh issue edit "${{ github.event.issue.number }}" --remove-label in-process
       env:
