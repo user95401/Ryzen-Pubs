@@ -13,6 +13,14 @@ jobs:
   Main:
    runs-on: ubuntu-latest 
    steps:
+    - name: Add assigness
+      uses: actions-cool/issues-helper@v3
+      with:
+         actions: "create-comment" 
+         issue-number: ${{ github.event.issue.number }}
+         body: |
+          The validation goes here: <br>
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     - name: bruh
       uses: actions/setup-python@v4
       with:
@@ -38,7 +46,9 @@ jobs:
       id: decode-base64
       with:
         base64: ${{ env.body }}
-    - run: echo ${{ env.ini_repo }}
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{ env.ini_repo}}
     - name: Fix body
       run: gh issue edit "${{ github.event.issue.number }}" --body "${{ steps.decode-base64.outputs.decoded }}"
       env:
