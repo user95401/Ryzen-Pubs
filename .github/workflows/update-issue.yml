@@ -38,6 +38,7 @@ jobs:
       id: decode-base64
       with:
         base64: ${{ env.body }}
+    - run: echo ${{ env.ini_repo }}
     - name: Fix body
       run: gh issue edit "${{ github.event.issue.number }}" --body "${{ steps.decode-base64.outputs.decoded }}"
       env:
