@@ -14,7 +14,6 @@ jobs:
    runs-on: ubuntu-latest 
    steps:
     - name: Add invalid label
-      if: contains(github.event.issue.labels.*.name, 'in-process')
       run: gh issue edit "${{ github.event.issue.number }}" --add-label invalid
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +60,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
     - name: Remove invalid label
-      if: contains(github.event.issue.labels.*.name, 'in-process')
+      if: contains(github.event.issue.labels.*.name, 'invalid')
       run: gh issue edit "${{ github.event.issue.number }}" --remove-label invalid
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
