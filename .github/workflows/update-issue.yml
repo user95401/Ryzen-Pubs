@@ -14,10 +14,10 @@ jobs:
    runs-on: ubuntu-latest 
    steps:
     - name: Add invalid label
-      run: gh issue edit "${{ github.event.issue.number }}" --add-label invalid
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GH_REPO: ${{ github.repository }}
+      uses: actions-cool/issues-helper@v3
+      with:
+          actions: 'add-labels'
+          labels: 'invalid' 
     - name: Send comment
       uses: actions-cool/issues-helper@v3
       with:
@@ -61,8 +61,7 @@ jobs:
       with:
         repository: ${{ env.ini_repo}}
     - name: Remove invalid label
-      if: contains(github.event.issue.labels.*.name, 'invalid')
-      run: gh issue edit "${{ github.event.issue.number }}" --remove-label invalid
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GH_REPO: ${{ github.repository }}
+      uses: actions-cool/issues-helper@v3
+      with:
+          actions: 'remove-labels'
+          labels: 'invalid'
