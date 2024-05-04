@@ -27,6 +27,11 @@ desc = <cg>helluva cool mod</c>
 # Hide away or bring back the mod
 Close opened issue to remove mod from listing, reopen to add mod again.
 
+# Release Settings
+You can specify some ini styled data in release body.
+Main section is `release`, values can be init:
+- `download_link`: [**__Direct download link__**](https://en.wikipedia.org/wiki/Direct_download_link) that points up to your file. Its can be used if u cant host release file at github releases.
+
 # Commands
 Every issue comment is processed by workflow for commads.
 - `!setlabels label,other-label` to toggle label. Only issue creator can use that, `verify` label will be ignored
