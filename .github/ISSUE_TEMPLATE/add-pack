@@ -1,0 +1,28 @@
+---
+name: Add Resource Pack
+description: base template with ini mod info but with pack label
+title: Unnamed Resource Pack
+labels: ['pack']
+
+body:
+- type: textarea
+  attributes:
+    label: "[mod]"
+    value: |
+      ; name of target file in release
+      file = noname.mod.geode
+      
+      ; repository
+      repo = user/mod
+      
+      ; u can set exact version if it really needs
+      release_tag = latest
+      
+      ; small description about ur mod
+      desc = No description provided...
+      
+      ; Direct link up to zip file (https://files.hosting/mytp.zip)
+      download_link = 
+  validations:
+    required: true
+---
