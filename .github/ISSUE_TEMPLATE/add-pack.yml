@@ -10,7 +10,7 @@ body:
     label: "[mod]"
     value: |
       ; name of target file in release
-      file = noname.mod.geode
+      file = my_tp.zip
       
       ; repository
       repo = user/mod
@@ -21,7 +21,7 @@ body:
       ; small description about ur mod
       desc = No description provided...
       
-      ; Direct link up to zip file (https://files.hosting/mytp.zip)
+      ; (if its not hosted at releases) Direct link up to zip file (https://files.hosting/my_tp.zip)
       download_link = 
   validations:
     required: true
