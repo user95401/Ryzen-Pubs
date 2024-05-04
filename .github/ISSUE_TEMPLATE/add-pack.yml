@@ -1,5 +1,5 @@
 ---
-name: Add Resource Pack
+name: Add Resource Pack (.zip)
 description: base template with ini mod info but with pack label
 title: Unnamed Resource Pack
 labels: ['pack']
@@ -19,10 +19,7 @@ body:
       release_tag = latest
       
       ; small description about ur mod
-      desc = No description provided...
-      
-      ; (if its not hosted at releases) Direct link up to zip file (https://files.hosting/my_tp.zip)
-      download_link = 
+      desc = No description provided... 
   validations:
     required: true
 ---
