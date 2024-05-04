@@ -1,8 +1,8 @@
 ---
-name: Add mod
+name: Add Modification (.geode/.dll)
 description: base template with ini mod info
 title: Unnamed Mod
-labels: ['mod', 'invalid']
+labels: ['mod']
 
 body:
 - type: textarea
@@ -17,9 +17,6 @@ body:
       
       ; u can set exact version if it really needs
       release_tag = latest
-      
-      ; (if its not hosted at releases) Direct link up to file (https://files.hosting/noname.mod.geode)
-      download_link = 
   validations:
     required: true
 ---
