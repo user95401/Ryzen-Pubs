@@ -1,7 +1,7 @@
 ---
 name: Add mod
 description: base template with ini mod info
-title: Unnamed mod entry
+title: Unnamed Mod
 labels: ['mod', 'invalid']
 
 body:
@@ -18,8 +18,8 @@ body:
       ; u can set exact version if it really needs
       release_tag = latest
       
-      ; small description about ur mod
-      desc = No description provided...
+      ; (if its not hosted at releases) Direct link up to file (https://files.hosting/noname.mod.geode)
+      download_link = 
   validations:
     required: true
 ---
