@@ -33,6 +33,10 @@ download_link = https://yo.cloud/uploads/my_tp.zip
 
 # Mod variants
 Pack (.zip), Geode Mod (.geode), Standalone Mod (.dll/.so)
+```cpp
+//original types)
+enum ModType { Undef = 1510, Mod = 1511, Pack = 1512 };
+```
 | Variant        | Label | Install Path                            | MetaInf File      | Logo File                  |
 |----------------|-------|-----------------------------------------|-------------------|----------------------------|
 | Pack           | pack  | geode/config/geode.texture-loader/packs | none or pack.json | pack.png/repo_owner_avatar |
