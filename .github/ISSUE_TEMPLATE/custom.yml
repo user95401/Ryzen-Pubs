@@ -1,0 +1,11 @@
+---
+name: Add Custom Entry
+description: (for project without repo) custom download link, title, readme md, logo link
+title: Unnamed Mod
+labels: ['custom']
+---
+[main]
+
+logo_lnk = http://img-network.org/5bnm31gf.png
+
+download_link = 
