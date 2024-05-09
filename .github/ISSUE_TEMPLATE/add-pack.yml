@@ -16,7 +16,7 @@ body:
       repo = user/mod
       
       ; u can set exact version if it really needs
-      release_tag = latest
+      release = latest
       
       ; small description about ur mod
       desc = No description provided... 
