@@ -11,7 +11,7 @@ env:
 jobs:
   Main:
    runs-on: ubuntu-latest 
-   if: github.event.comment.user.id == github.event.issue.user.id && startsWith(github.event.comment.body, '!setlabels ') && false == contains(github.event.comment.body, 'verified') 
+   if: github.event.comment.user.id == github.event.issue.user.id && startsWith(github.event.comment.body, '!setlabels ') && false == contains(github.event.comment.body, 'verified') && false == contains(github.event.comment.body, 'featured') 
    steps:
     - name: bruh
       uses: actions/setup-python@v4
