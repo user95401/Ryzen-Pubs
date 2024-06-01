@@ -6,6 +6,7 @@ labels: ['mod']
 
 body:
 - type: textarea
+  label: ""
   attributes:
     value: |
       ; name of target file in release
