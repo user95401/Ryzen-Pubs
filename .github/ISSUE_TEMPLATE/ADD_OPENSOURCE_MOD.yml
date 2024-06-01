@@ -6,8 +6,8 @@ labels: ['mod']
 
 body:
 - type: textarea
-  label: ""
   attributes:
+    label: ""
     value: |
       ; name of target file in release
       file = noname.mod.geode
