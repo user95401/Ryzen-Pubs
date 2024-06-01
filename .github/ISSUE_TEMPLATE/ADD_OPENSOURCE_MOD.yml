@@ -1,13 +1,12 @@
 ---
-name: Add Modification (.geode/.dll/.so)
-description: base template with ini mod info
+name: Add Open Source Modification (.geode/.dll)
+description: Ryzen will getting info from your repository.
 title: Unnamed Mod
 labels: ['mod']
 
 body:
 - type: textarea
   attributes:
-    label: "[mod]"
     value: |
       ; name of target file in release
       file = noname.mod.geode
