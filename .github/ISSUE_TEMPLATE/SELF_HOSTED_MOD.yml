@@ -34,3 +34,12 @@ body:
       overlay_link = 
   validations:
     required: true
+    
+- type: textarea
+  attributes:
+    label: "body:"
+    value: |
+      # My mod
+      soo thats template text ya here you can write your content
+  validations:
+    required: true
