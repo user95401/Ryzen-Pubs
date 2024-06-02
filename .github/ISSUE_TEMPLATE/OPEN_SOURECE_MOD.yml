@@ -1,0 +1,51 @@
+name: "Open Source Mod (.geode or .dll on github repo with releases)"
+description: "Ryzen will get all info from repository. Download link is taken from releases."
+
+labels: "mod"
+title: "Unnamed Open Source Mod"
+
+body:
+
+- type: textarea
+  attributes:
+    label: "Main Section"
+    value: |
+      [main]
+      ; not important keys can be removed
+      
+      ; Description about your mod in 1-2 text lines 
+      desc = Just cool mod, trust me
+      ; (not important key) If mod not yours or whatever
+      developer = 
+      ; (not important key) Custom link to logo image 
+      logo_url = 
+      ...
+    render: ini
+  validations:
+    required: true
+    
+- type: textarea
+  attributes:
+    label: "Repository Section"
+    value: |
+      [repo]
+      ; https://github.com/{repo.owner}/{repo.name}
+      owner = TheUltimateModMaker
+      name = the_mod
+      ...
+    render: ini
+  validations:
+    required: true
+    
+- type: textarea
+  attributes:
+    label: "Release Section"
+    value: |
+      [release]
+      ; also can be id or "tag/{your_tag}"
+      tar = latest
+      file = theultimatemodmaker.the-mod
+      ...
+    render: ini
+  validations:
+    required: true
