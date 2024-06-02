@@ -19,8 +19,6 @@ body:
       developer = 
       ; (not important key) Custom link to logo image 
       logo_url = 
-      ...
-    render: cpp
   validations:
     required: true
     
@@ -32,8 +30,6 @@ body:
       ; https://github.com/{repo.owner}/{repo.name}
       owner = TheUltimateModMaker
       name = the_mod
-      ...
-    render: ini
   validations:
     required: true
     
@@ -45,7 +41,5 @@ body:
       ; also can be id or "tag/{your_tag}"
       tar = latest
       file = theultimatemodmaker.the-mod
-      ...
-    render: ini
   validations:
     required: true
