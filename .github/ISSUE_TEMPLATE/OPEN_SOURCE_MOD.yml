@@ -11,14 +11,21 @@ body:
     label: "Main Section"
     value: |
       [main]
-      ; not important keys can be removed
       
       ; Description about your mod in 1-2 text lines 
       desc = Just cool mod, trust me
+      
       ; (not important key) If mod not yours or whatever
       developer = 
+      
       ; (not important key) Custom link to logo image 
       logo_url = 
+      
+      ; not important key
+      github_page_link = 
+      
+      ; not important key
+      website_link = 
   validations:
     required: true
     
@@ -28,7 +35,9 @@ body:
     value: |
       [repo]
       ; https://github.com/{repo.owner}/{repo.name}
+      
       owner = TheUltimateModMaker
+      
       name = the_mod
   validations:
     required: true
@@ -38,8 +47,10 @@ body:
     label: "Release Section"
     value: |
       [release]
+      
       ; also can be id or "tag/{your_tag}"
       tar = latest
+      
       file = theultimatemodmaker.the-mod
   validations:
     required: true
