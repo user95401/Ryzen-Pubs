@@ -20,7 +20,7 @@ body:
       ; (not important key) Custom link to logo image 
       logo_url = 
       ...
-    render: ini
+    render: cpp
   validations:
     required: true
     
