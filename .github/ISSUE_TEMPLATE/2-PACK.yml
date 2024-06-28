@@ -1,7 +1,7 @@
 name: "Resourses Mod (.zip texture pack)"
 description: "Fill important info about yor resource pack in main section."
 
-labels: "pack"
+labels: "pack,gd-2.206"
 title: "Unnamed Resource Pack"
 
 body:
