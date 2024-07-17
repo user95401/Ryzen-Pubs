@@ -21,9 +21,8 @@ ONLY issue creator can use that,
 ```
 Its will be saved at user locally.
 
-Later mod will crawl comments 
-for latest comment that have "!actualversion=".
-Mod will notify if rvalue is not founded in local user save.
+Mod crawling for latest comment contains "!actualversion=".
+And will notify if rvalue is not founded in local user save.
 
 All downloaded versions is saved in 
 "geode/ryzen/mods/yourmod/.downloadedVersions"
