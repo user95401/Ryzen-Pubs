@@ -11,4 +11,20 @@ Close opened issue to remove mod from listing, reopen to add mod again.
 
 # Commands
 Every issue comment is processed by workflow for commands.
-- `!setlabels label,other-label` to toggle label. Only issue creator can use that, `verified` and `featured` labels will be ignored (they causes canceling).
+
+- `!setlabels label,other-label` to toggle label.
+```
+ONLY issue creator can use that, 
+"verified" and "featured" labels causes cancel WHOLE command.
+```
+- `!actualversion=v1.1.0` to set actual version. 
+```
+Its will be saved at user locally.
+
+Later mod will crawl comments 
+for latest comment that have "!actualversion=".
+Mod will notify if rvalue is not founded in local user save.
+
+All downloaded versions is saved in 
+"geode/ryzen/mods/yourmod/.downloadedVersions"
+```
