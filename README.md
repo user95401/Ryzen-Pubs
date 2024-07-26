@@ -1,5 +1,5 @@
-# Rysen-Mods
-Rysen Mods Catalog Container...<br>
+# rysen-Mods
+rysen mods catalog container...<br>
 Mods will be stored at issues.
 
 ### Add mod
