@@ -1,5 +1,5 @@
-# rysen-Mods
-rysen mods catalog container...<br>
+# gmdw-pubs
+GMD Wilderness catalog container...<br>
 Mods will be stored at issues.
 
 ### Add mod
@@ -25,5 +25,5 @@ Mod crawling for latest comment contains "!actualversion=".
 And will notify if rvalue is not founded in local user save.
 
 All downloaded versions is saved in 
-"geode/rysen/mods/yourmod/.downloadedVersions"
+"geode/gmdw/mods/yourmod/.downloadedVersions"
 ```
