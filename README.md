@@ -1,6 +1,6 @@
-# gmdw-pubs
-GMD Wilderness catalog container...<br>
-Mods will be stored at issues.
+# ryzen-pubs
+Catalog container of Ryzen modifiaction for Geometry Dash...<br>
+Publications will be stored at issues.
 
 ### Add mod
 Just create an issue with related template.<br>
